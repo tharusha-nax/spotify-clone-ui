@@ -53,9 +53,9 @@ const FloatingMusicPlayer = () => {
         </TextTicker>
       </View>
       <TouchableOpacity>
-          <MaterialIcons name="devices" size={26} color='#fffa' />
+        <MaterialIcons name="devices" size={30} color="#fffa" />
       </TouchableOpacity>
-      <View style={{width: 16}} /> 
+      <View style={{ width: 14 }} />
       <TouchableOpacity onPress={() => setLiked(!liked)}>
         {liked ? (
           <AntDesign name="heart" size={24} color="#1ed760" />
@@ -63,11 +63,11 @@ const FloatingMusicPlayer = () => {
           <AntDesign name="hearto" size={24} color="white" />
         )}
       </TouchableOpacity>
-      <View style={{width: 16}} />
+      <View style={{ width: 16 }} />
       <TouchableOpacity>
-        <FontAwesome5 name='play' size={20} color='white' />
+        <FontAwesome5 name="play" size={20} color="white" />
       </TouchableOpacity>
-      <View style={{width: 8}} />
+      <View style={{ width: 8 }} />
     </View>
   );
 };

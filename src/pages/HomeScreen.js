@@ -10,7 +10,6 @@ import SixRecentPlaylists from "../components/SixRecentPlaylists";
 import RowOfPlaylists from "../components/RowOfPlaylists";
 import GradientOverlay from "../components/GradientOverlay";
 import RowOfArtists from "../components/RowOfArtists";
-import { LinearGradient } from "expo-linear-gradient";
 
 const HomeScreen = () => {
   return (

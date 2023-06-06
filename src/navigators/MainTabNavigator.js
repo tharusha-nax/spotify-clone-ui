@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../pages/HomeScreen";
@@ -11,16 +11,18 @@ const Tab = createBottomTabNavigator();
 const MainTabNavigator = () => {
   return (
     <Tab.Navigator
+      initialRouteName="Search"
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
           backgroundColor: "transparent",
-          position: "fixed",
+          position: "absolute",
           elevation: 0,
           bottom: 5,
           borderTopWidth: 0,
           paddingHorizontal: 45,
         },
+        tabBarHideOnKeyboard: true,
       }}
     >
       <Tab.Screen
@@ -43,11 +45,7 @@ const MainTabNavigator = () => {
         component={SearchScreen}
         options={{
           tabBarIcon: ({ color }) => (
-            <Ionicons
-              name='search'
-              size={24}
-              color={color}
-            />
+            <Ionicons name="search" size={24} color={color} />
           ),
           tabBarInactiveTintColor: "#fffa",
           tabBarInactiveTintColor: "#fff",

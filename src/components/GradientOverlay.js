@@ -5,7 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient'
 const GradientOverlay = () => {
   return (
     <LinearGradient 
-        colors={['transparent', 'rgba(0,0,0,0.9)']}
+        colors={['transparent', 'rgba(0,0,0,0.9)' ]}
         style={{
             position: 'absolute',
             left: 0,

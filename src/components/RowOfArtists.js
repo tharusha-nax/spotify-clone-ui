@@ -16,7 +16,7 @@ const RowOfArtists= ({title}) => {
           <ArtistsModule name="Poylow" />
           <ArtistsModule name="BEAUZ" />
           <ArtistsModule  name="The Chainsmokers" />
-          <ArtistsModule name="Alan Wlaker" />
+          <ArtistsModule name="Alan Walker" />
           <ArtistsModule name="NCS" />
         </ScrollView>
       </View>
