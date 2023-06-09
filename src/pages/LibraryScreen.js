@@ -19,7 +19,8 @@ import {
 import ButtonsInLibrary from "../components/ButtonsInLibrary";
 // import GradientOverlayTop from "../components/GradientOverlayTop";
 import GradientOverlay from "../components/GradientOverlay";
-import PlaylistsInLibrary from "../components/PinnedPlaylistsInLibrary";
+import PinnedPlaylistsInLibrary from "../components/PinnedPlaylistsInLibrary";
+import PlaylistsInLibrary from "../components/PlaylistsInLibrary";
 
 const LibraryScreen = () => {
   const scrollY = new Animated.Value(0);
@@ -114,20 +115,30 @@ const LibraryScreen = () => {
           <TouchableOpacity
             style={{ position: "absolute", right: 0, justifyContent: "center" }}
           >
-            <AntDesign name="appstore-o" color="white" />
+            <AntDesign name="appstore-o" color="white" size={18} />
           </TouchableOpacity>
         </View>
 
         <View style={{ height: 15 }} />
 
-        <PlaylistsInLibrary
+        <PinnedPlaylistsInLibrary
           title="Liked songs"
           producer="199 songs"
           color="white"
         />
-        <PlaylistsInLibrary title="Favourites" producer="User" />
-        <PlaylistsInLibrary title="Sinhala Mix" producer="User" />
-        <PlaylistsInLibrary title="Other" producer="User" />
+        <PinnedPlaylistsInLibrary title="Favourites" producer="User" />
+        <PinnedPlaylistsInLibrary title="Studying Mix" producer="User" />
+        <PinnedPlaylistsInLibrary title="Other" producer="User" />
+
+        <PlaylistsInLibrary title="One More Light" producer="Linkin Park" />
+        <PlaylistsInLibrary
+          title="Favourites from Owl City"
+          producer="Owl City"
+        />
+        <PlaylistsInLibrary title="This is J.Fla" producer="Spotify" />
+        <PlaylistsInLibrary title="NCS Releases" producer="NCS" />
+
+        <View style={{ height: 140 }} />
       </ScrollView>
 
       <GradientOverlay />
