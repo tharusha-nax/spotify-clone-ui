@@ -11,7 +11,7 @@ const Tab = createBottomTabNavigator();
 const MainTabNavigator = () => {
   return (
     <Tab.Navigator
-      initialRouteName="Search"
+      initialRouteName="Your Library"
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
