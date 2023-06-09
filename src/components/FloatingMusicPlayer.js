@@ -7,10 +7,16 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import TextTicker from "react-native-text-ticker";
-import { AntDesign, FontAwesome5, MaterialIcons } from "@expo/vector-icons";
+import {
+  AntDesign,
+  FontAwesome5,
+  MaterialIcons,
+  Fontisto,
+} from "@expo/vector-icons";
 
 const FloatingMusicPlayer = () => {
   const [liked, setLiked] = useState(false);
+  const [playing, setPlaying] = useState(false);
 
   return (
     <View
@@ -64,8 +70,12 @@ const FloatingMusicPlayer = () => {
         )}
       </TouchableOpacity>
       <View style={{ width: 16 }} />
-      <TouchableOpacity>
-        <FontAwesome5 name="play" size={20} color="white" />
+      <TouchableOpacity onPress={() => setPlaying(!playing)}>
+        {playing ? (
+          <Fontisto name="pause" color="white" size={20} />
+        ) : (
+          <FontAwesome5 name="play" color="white" size={17.5} />
+        )}
       </TouchableOpacity>
       <View style={{ width: 8 }} />
     </View>
