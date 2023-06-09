@@ -44,6 +44,7 @@ const HomeScreen = () => {
             <AntDesign name="setting" size={24} color="white" />
           </TouchableOpacity>
         </View>
+        
         <View style={{ height: 20 }} />
         <ButtonsBelowGreeting />
         <View style={{ height: 10 }} />
