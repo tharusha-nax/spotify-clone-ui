@@ -10,7 +10,7 @@ import React, { useState } from "react";
 import { AntDesign } from '@expo/vector-icons';
 
 const PinnedPlaylistsInLibrary = ({ title, producer }) => {
-  const [pinned, setPinned] = useState(false);
+  const [pinned, setPinned] = useState(true);
 
 
   return (
@@ -39,12 +39,15 @@ const PinnedPlaylistsInLibrary = ({ title, producer }) => {
         }}
       >
         {title}
-        <Text style={{ color: "#aaa", fontSize: 16, fontStyle: "none" }}>
+        <Text style={{ color: "#aaa", fontSize: 14, lineHeight: 25 }}>
           {"\n"}Playlist • {producer}
         </Text>
       </Text>
 
-      <TouchableOpacity onPress={() => setPinned(!pinned)} style={{ justifyContent: 'center' }} >
+      <TouchableOpacity
+        onPress={() => setPinned(!pinned)}
+        style={{ justifyContent: "center" }}
+      >
         {pinned ? (
           <AntDesign
             name="pushpin"
