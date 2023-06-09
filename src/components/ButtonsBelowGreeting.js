@@ -9,8 +9,10 @@ const ButtonsBelowGreeting = () => {
           paddingVertical: 6,
           marginRight: 10,
           paddingHorizontal: 15,
-          backgroundColor: '#333',
-          borderRadius: 999
+          backgroundColor: "#000",
+          borderRadius: 999,
+          borderWidth: 0.4,
+          borderColor: 'white'
         }}
       >
         <Text style={{color: 'white'}} >Music</Text>
@@ -20,8 +22,10 @@ const ButtonsBelowGreeting = () => {
           paddingVertical: 6,
           marginRight: 10,
           paddingHorizontal: 15,
-          backgroundColor: '#333',
-          borderRadius: 999
+          backgroundColor: "#000",
+          borderRadius: 999,
+          borderWidth: 0.4,
+          borderColor: 'white'
         }}
       >
         <Text style={{color: 'white'}} >Podcast & Shows</Text>
