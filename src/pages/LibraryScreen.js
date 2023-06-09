@@ -136,7 +136,7 @@ const LibraryScreen = () => {
           <LinearGradient
             useAngle={true}
             angel={45}
-            angleCenter={{x: 0.5, y: 0.5}}
+            angleCenter={{ x: 0.5, y: 0.5 }}
             colors={["#4970e5", "#6249ff", "#727A93"]}
             style={{
               width: 75,
