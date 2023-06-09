@@ -8,7 +8,7 @@ import {
   Dimensions,
   Image,
 } from "react-native";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import {
   FontAwesome5,
   Feather,
@@ -22,6 +22,7 @@ import GradientOverlay from "../components/GradientOverlay";
 import PinnedPlaylistsInLibrary from "../components/PinnedPlaylistsInLibrary";
 import PlaylistsInLibrary from "../components/PlaylistsInLibrary";
 import ArtistsInLibrary from "../components/ArtistsInLibrary";
+import { LinearGradient } from "expo-linear-gradient";
 
 const LibraryScreen = () => {
   const scrollY = new Animated.Value(0);
@@ -30,6 +31,8 @@ const LibraryScreen = () => {
     inputRange: [0, 45],
     outputRange: [0, -45],
   });
+
+  const [pinned, setPinned] = useState(true);
 
   return (
     <View style={{ flex: 1, backgroundColor: "black", paddingHorizontal: 15 }}>
@@ -122,11 +125,79 @@ const LibraryScreen = () => {
 
         <View style={{ height: 15 }} />
 
-        <PinnedPlaylistsInLibrary
+        {/* Liked Songs */}
+        <TouchableOpacity
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            marginBottom: 15,
+          }}
+        >
+          <LinearGradient
+            useAngle={true}
+            angel={45}
+            angleCenter={{x: 0.5, y: 0.5}}
+            colors={["#4970e5", "#6249ff", "#727A93"]}
+            style={{
+              width: 75,
+              marginRight: 15,
+              aspectRatio: 1,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <AntDesign name="heart" size={24} color="white" />
+          </LinearGradient>
+          <Text
+            style={{
+              color: "white",
+              paddingHorizontal: 10,
+              fontSize: 18,
+              fontWeight: "400",
+              flex: 1,
+            }}
+          >
+            Liked Songs
+            <Text style={{ color: "#aaa", fontSize: 14, lineHeight: 25 }}>
+              {"\n"}Playlist • 999 songs
+            </Text>
+          </Text>
+
+          <TouchableOpacity
+            onPress={() => setPinned(!pinned)}
+            style={{ justifyContent: "center" }}
+          >
+            {pinned ? (
+              <AntDesign
+                name="pushpin"
+                size={24}
+                color="#1ed760"
+                style={{
+                  transform: [{ rotate: "90deg" }],
+                  position: "absolute",
+                  right: 0,
+                }}
+              />
+            ) : (
+              <AntDesign
+                name="pushpino"
+                size={24}
+                color="white"
+                style={{
+                  transform: [{ rotate: "90deg" }],
+                  position: "absolute",
+                  right: 0,
+                }}
+              />
+            )}
+          </TouchableOpacity>
+        </TouchableOpacity>
+
+        {/* <PinnedPlaylistsInLibrary
           title="Liked songs"
           producer="199 songs"
           color="white"
-        />
+        /> */}
         <PinnedPlaylistsInLibrary title="Favourites" producer="User" />
         <PinnedPlaylistsInLibrary title="Studying Mix" producer="User" />
         <PinnedPlaylistsInLibrary title="Other" producer="User" />
@@ -159,7 +230,15 @@ const LibraryScreen = () => {
             justifyContent: "center",
           }}
         >
-          <View style={{ width: 75, marginRight: 15, aspectRatio: 1, justifyContent: 'center', alignItems: 'center' }} >
+          <View
+            style={{
+              width: 75,
+              marginRight: 15,
+              aspectRatio: 1,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <MaterialIcons name="add" color="#aaa" size={35} />
           </View>
           <Text
