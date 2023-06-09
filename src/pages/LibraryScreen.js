@@ -21,6 +21,7 @@ import ButtonsInLibrary from "../components/ButtonsInLibrary";
 import GradientOverlay from "../components/GradientOverlay";
 import PinnedPlaylistsInLibrary from "../components/PinnedPlaylistsInLibrary";
 import PlaylistsInLibrary from "../components/PlaylistsInLibrary";
+import ArtistsInLibrary from "../components/ArtistsInLibrary";
 
 const LibraryScreen = () => {
   const scrollY = new Animated.Value(0);
@@ -137,6 +138,42 @@ const LibraryScreen = () => {
         />
         <PlaylistsInLibrary title="This is J.Fla" producer="Spotify" />
         <PlaylistsInLibrary title="NCS Releases" producer="NCS" />
+        <ArtistsInLibrary artist="Bella Poarch" />
+        <PlaylistsInLibrary title="Repeating Playlist" producer="User" />
+        <ArtistsInLibrary artist="BLACKPINK" />
+        <PlaylistsInLibrary title="This is BLACKPINK" producer="Spotify" />
+
+        <ArtistsInLibrary artist="Alan Walker" />
+        <ArtistsInLibrary artist="J.Fla" />
+        <ArtistsInLibrary artist="RANDALL" />
+        <ArtistsInLibrary artist="Eminem" />
+        <ArtistsInLibrary artist="Charlie Puth" />
+        <PlaylistsInLibrary title="Discover Weekly" producer="Spotify" />
+        <ArtistsInLibrary artist="JVLA" />
+        <ArtistsInLibrary artist="Marshmello" />
+
+        <TouchableOpacity
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <View style={{ width: 75, marginRight: 15, aspectRatio: 1, justifyContent: 'center', alignItems: 'center' }} >
+            <MaterialIcons name="add" color="#aaa" size={35} />
+          </View>
+          <Text
+            style={{
+              color: "white",
+              fontSize: 18,
+              fontWeight: "400",
+              flex: 1,
+              // marginLeft: 50,
+            }}
+          >
+            Add artists
+          </Text>
+        </TouchableOpacity>
 
         <View style={{ height: 140 }} />
       </ScrollView>
